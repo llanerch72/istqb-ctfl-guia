@@ -99,6 +99,12 @@
   .callout{border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--surface);border-radius:0 12px 12px 0;padding:14px 18px;margin:16px 0;box-shadow:var(--shadow)}
   .callout .co-t{font-family:var(--font-display);font-weight:800;font-size:13px;letter-spacing:.02em;color:var(--accent-strong);text-transform:uppercase;margin:0 0 6px}
   .callout.warn{border-left-color:var(--warn)} .callout.warn .co-t{color:var(--warn)}
+  .practice{border:1px dashed var(--good);border-left:4px solid var(--good);background:var(--good-soft);border-radius:0 12px 12px 0;padding:12px 16px;margin:14px 0}
+  .practice .pr-t{font-family:var(--font-display);font-weight:800;font-size:12.5px;letter-spacing:.02em;color:var(--good);text-transform:uppercase;margin:0 0 6px;display:flex;align-items:center;gap:7px}
+  .practice p{margin:6px 0}
+  .practice ul{margin:6px 0}
+  .practice em{color:var(--muted);font-style:italic}
+  .practice code{font-family:var(--font-mono);font-size:.92em;background:var(--surface);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
   .callout ol{counter-reset:pr;list-style:none;padding-left:0}
   .callout ol li{counter-increment:pr;padding-left:34px;position:relative;margin:9px 0}
   .callout ol li::before{content:counter(pr);position:absolute;left:0;top:1px;font-family:var(--font-mono);font-weight:700;font-size:12px;width:22px;height:22px;display:grid;place-items:center;background:var(--accent);color:#fff;border-radius:6px}
@@ -216,7 +222,7 @@
     <div>
       <p class="eyebrow">Certified Tester · Foundation Level</p>
       <h1>ISTQB <span>CTFL v4.0</span><br>Guía de estudio y examen</h1>
-      <p class="lede">Apuntes de los 6 capítulos, fichas de terminología y un banco de preguntas tipo examen con corrección al instante. Terminología alineada con el syllabus oficial en español (SSTQB/ISTQB v4.0).</p>
+      <p class="lede">Apuntes de los 6 capítulos con ejemplos reales de QA (cajas <b>🔧 En la práctica</b>), fichas de terminología y un banco de preguntas tipo examen. Terminología alineada con el syllabus oficial en español (SSTQB/ISTQB v4.0).</p>
     </div>
     <div class="facts" aria-label="Datos del examen">
       <div class="fact"><b>40</b><small>Preguntas</small></div>
@@ -274,11 +280,29 @@
       </ul>
       <p style="margin:8px 0 0">Un error puede introducir un defecto y un defecto puede provocar un fallo — pero <b>no siempre</b>. Los fallos también pueden deberse a condiciones del entorno. La <b>causa raíz</b> es el origen fundamental del error.</p>
     </div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p>La tienda ofrece <b>envío gratis a partir de 50 €</b>. El desarrollador escribe <code>if (total &gt; 50)</code> cuando debía ser <code>&gt;=</code>:</p>
+      <ul>
+        <li><b>Error:</b> la equivocación del dev al teclear <code>&gt;</code> en vez de <code>&gt;=</code>.</li>
+        <li><b>Defecto:</b> esa línea incorrecta que queda en el código (aunque nadie la haya ejecutado todavía).</li>
+        <li><b>Fallo:</b> el cliente mete 50,00 € exactos en el carrito y <em>no</em> le sale el envío gratis. Eso es lo que tú ves y reportas en el bug.</li>
+      </ul>
+      <p><em>El defecto podría no dar la cara nunca si ningún cliente compra exactamente por 50 € — por eso «un defecto no siempre provoca un fallo».</em></p>
+    </div>
     <div class="table-wrap"><table>
       <tr><th>AC — Aseguramiento de la Calidad (QA)</th><th>Control de la Calidad (QC)</th></tr>
       <tr><td>Orientado al <b>proceso</b>. Preventivo.</td><td>Orientado al <b>producto</b>. Correctivo. Incluye las <b>pruebas</b>.</td></tr>
     </table></div>
     <p><b>Las pruebas forman parte del control de calidad (QC)</b>, no del QA.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <ul>
+        <li><b>AC / QA (proceso):</b> que el equipo acuerde una <em>Definition of Done</em>, haga code review de cada PR y tenga pipeline de CI. Es prevenir problemas cuidando <em>cómo</em> se trabaja.</li>
+        <li><b>Control de calidad / QC (producto):</b> que <em>tú</em> te sientes a probar el checkout y encuentres que el cupón no se aplica. Es revisar el <em>resultado</em>.</li>
+      </ul>
+      <p><em>Cuando ejecutas casos de prueba estás haciendo QC, no QA.</em></p>
+    </div>
 
     <h3>1.3 Los siete principios <span class="klev k2">K2</span></h3>
     <div class="callout">
@@ -292,6 +316,18 @@
         <li><b>La prueba depende del contexto.</b></li>
         <li><b>Falacia de la ausencia de defectos</b> — un sistema sin apenas defectos puede seguir siendo inútil.</li>
       </ol>
+    </div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · los principios en tu día a día</p>
+      <ul>
+        <li><b>Presencia, no ausencia:</b> por mucho que pruebes el checkout y no encuentres nada, no puedes firmar «no hay bugs»; solo «no he encontrado más».</li>
+        <li><b>Exhaustiva imposible:</b> un campo de búsqueda admite infinitos textos; no los pruebas todos, eliges representativos.</li>
+        <li><b>Prueba temprana:</b> detectar en el refinamiento que la historia no dice qué pasa si el stock es 0 cuesta 1 minuto; detectarlo en producción, un incidente.</li>
+        <li><b>Se agrupan:</b> el módulo de pagos y el de cupones siempre concentran la mayoría de los bugs; ahí aprietas más.</li>
+        <li><b>Se desgastan:</b> tu suite de regresión que lleva meses en verde ya no encuentra nada nuevo; toca añadir casos.</li>
+        <li><b>Depende del contexto:</b> no pruebas igual una pasarela de pago que el banner de cookies.</li>
+        <li><b>Falacia de ausencia de defectos:</b> el checkout no falla… pero si el botón «Pagar» está escondido y nadie compra, el producto fracasa igual.</li>
+      </ul>
     </div>
 
     <h3>1.4 Actividades, testware y roles <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
@@ -312,6 +348,10 @@
     <div class="keyrow"><span class="chip">Conocimiento de pruebas</span><span class="chip">Minuciosidad</span><span class="chip">Comunicación</span><span class="chip">Pensamiento crítico</span><span class="chip">Conocimiento técnico y de dominio</span></div>
     <p><span class="term">Enfoque de equipo completo:</span> todo el equipo es responsable de la calidad; cualquiera con el conocimiento adecuado puede realizar tareas de prueba.</p>
     <p><span class="term">Independencia:</span> a más independencia del autor, más probable detectar ciertos defectos. Grados: autor → otra persona del equipo → equipo independiente → organización externa. Inconvenientes: aislamiento, peor comunicación, pérdida de responsabilidad del desarrollador por la calidad.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p><b>Independencia:</b> el desarrollador prueba su cupón con el «camino feliz» (código válido, carrito normal) porque tiene en la cabeza cómo lo programó. Tú, que no lo escribiste, pruebas el cupón caducado, en mayúsculas, con el carrito vacío o aplicándolo dos veces — y ahí saltan los bugs. Esa es exactly la ventaja de que pruebe alguien distinto al autor.</p>
+    </div>
   </section>
 
   <section class="ch" id="c2">
@@ -346,6 +386,16 @@
       <tr><td>Integración de sistemas</td><td>Interacción con otros sistemas/servicios.</td></tr>
       <tr><td>Aceptación</td><td>Validación y confianza. UAT, OAT, contractual/normativa, alfa, beta.</td></tr>
     </table></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · los niveles en una tienda online</p>
+      <ul>
+        <li><b>Componente:</b> el dev prueba en aislado la función <code>calcularDescuento()</code>.</li>
+        <li><b>Integración de componentes:</b> comprobar que «carrito» pasa bien el total a «cupones» y este a «pago».</li>
+        <li><b>Sistema:</b> tú, en el navegador, haces la compra completa de principio a fin.</li>
+        <li><b>Integración de sistemas:</b> verificar que la tienda habla bien con la <em>pasarela de pago externa</em> (Stripe) y con el ERP de stock.</li>
+        <li><b>Aceptación:</b> el cliente/Product Owner valida que «esto es lo que pedí» (UAT); beta = un grupo de usuarios lo prueba en real antes del lanzamiento.</li>
+      </ul>
+    </div>
     <ul>
       <li><span class="term">Funcionales</span> — qué hace (completitud, corrección, adecuación).</li>
       <li><span class="term">No funcionales</span> — cómo de bien (rendimiento, usabilidad, seguridad, fiabilidad… ISO 25010).</li>
@@ -354,8 +404,20 @@
     <div class="callout warn"><p class="co-t">Confirmación vs. regresión</p>
       <p style="margin:0"><b>Confirmación:</b> comprueba que una corrección resolvió el defecto. <b>Regresión:</b> comprueba que un cambio no rompió lo que ya funcionaba. Cualquier tipo puede darse en cualquier nivel.</p>
     </div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p>Reportaste que «el cupón BLACKFRIDAY no descuenta». El dev lo corrige y te lo devuelve:</p>
+      <ul>
+        <li><b>Prueba de confirmación:</b> repites <em>exactamente</em> ese caso — aplicas BLACKFRIDAY y confirmas que ahora sí descuenta.</li>
+        <li><b>Prueba de regresión:</b> compruebas que ese cambio no ha roto <em>lo de alrededor</em> — que el total, el IVA y el envío gratis siguen calculándose bien, y que otros cupones no se han estropeado.</li>
+      </ul>
+    </div>
     <h3>2.3 Pruebas de mantenimiento <span class="klev k1">K1</span></h3>
     <p>Disparadores: <b>modificación</b>, <b>migración</b> y <b>retirada</b>. El <span class="term">análisis de impacto</span> determina el alcance de la regresión.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p><b>Mantenimiento:</b> la tienda lleva un año en producción y cambiáis de pasarela de pago (de PayPal a Stripe). Eso es un disparador de <em>migración</em>: hay que volver a probar todo el checkout. El <b>análisis de impacto</b> te dice qué toca reprobar — solo el pago y la confirmación de pedido, no hace falta reprobar el blog ni el buscador.</p>
+    </div>
   </section>
 
   <section class="ch" id="c3">
@@ -373,6 +435,10 @@
       <tr><th>Estáticas</th><th>Dinámicas</th></tr>
       <tr><td>Hallan <b>defectos directamente</b>. No necesitan código ejecutable.</td><td>Provocan <b>fallos</b>. Requieren ejecución.</td></tr>
     </table></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p><b>Prueba estática</b> es cuando, en el refinamiento de la historia «aplicar cupón», lees los criterios de aceptación y preguntas: <em>«¿qué pasa si el cupón está caducado? ¿y si el carrito está vacío? ¿se puede acumular con otra oferta?»</em>. Estás encontrando defectos <b>sin ejecutar nada</b> — todavía no hay código. Un bug cazado aquí cuesta una frase; cazado en producción, un hotfix a las 3 de la madrugada.</p>
+    </div>
     <h3>3.2 Feedback y proceso de revisión <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <div class="callout"><p class="co-t">Actividades de la revisión</p>
       <ol>
@@ -391,6 +457,16 @@
       <tr><td>Revisión técnica</td><td>Pares técnicos; busca consenso.</td></tr>
       <tr><td>Inspección</td><td>La más <b>formal</b>; proceso, roles y métricas.</td></tr>
     </table></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · los tipos de revisión</p>
+      <ul>
+        <li><b>Informal:</b> un «oye, ¿le echas un ojo a esto?» por Slack. Sin acta.</li>
+        <li><b>Revisión guiada (walkthrough):</b> el dev comparte pantalla y te <em>guía</em> por su Pull Request explicándote los cambios.</li>
+        <li><b>Revisión técnica:</b> varios técnicos revisáis juntos la propuesta de arquitectura para llegar a un acuerdo.</li>
+        <li><b>Inspección:</b> revisión formal con checklist y métricas (defectos por página) — típica en entornos regulados como banca o sanidad.</li>
+      </ul>
+      <p><em>Un code review normal en GitHub suele estar entre la revisión informal y la técnica.</em></p>
+    </div>
   </section>
 
   <section class="ch" id="c4">
@@ -398,9 +474,50 @@
     <p style="color:var(--muted)">El capítulo con <b>más peso</b> y el único con objetivos <span class="klev k3">K3</span> (aplicar): calcularás particiones, análisis del valor frontera, tablas de decisión, transiciones y cobertura.</p>
     <h3>4.2 Caja negra <span class="klev k3">K3</span></h3>
     <p><span class="term">Partición de equivalencia (equivalence partitioning):</span> divide el dominio en particiones donde todos los valores se tratan igual; basta un valor por partición. Hay válidas e inválidas.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · partición de equivalencia</p>
+      <p>En el campo <b>«unidades»</b> del carrito el stock permite comprar de 1 a 10. En vez de probar 1, 2, 3… hasta 10 (perderías el día), agrupas en <em>particiones que el sistema trata igual</em> y pruebas <b>un representante de cada una</b>:</p>
+      <ul>
+        <li><b>0 o menos</b> → inválida (prueba: <code>0</code>)</li>
+        <li><b>de 1 a 10</b> → válida (prueba: <code>5</code>)</li>
+        <li><b>más de 10</b> → inválida (prueba: <code>11</code>)</li>
+      </ul>
+      <p><em>Con 3 casos cubres el campo. Eso de «para qué voy a probar 4 si ya probé 5, es lo mismo» — eso es partición de equivalencia, lo hacías sin saber su nombre.</em></p>
+    </div>
     <p><span class="term">Análisis del valor frontera (boundary value analysis):</span> los defectos se agolpan en los bordes de una partición ordenada. <b>2 valores:</b> frontera + vecino. <b>3 valores:</b> frontera + ambos vecinos. Solo datos ordenables. <span style="color:var(--muted)">(También conocido como «análisis de valores límite».)</span></p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · análisis del valor frontera</p>
+      <p>La misma tienda da <b>envío gratis desde 50 €</b>. Los bugs casi nunca están en «100 €» — están <em>justo en el borde</em>. Así que en lugar de probar 30 € y 200 €, pruebas <b>pegado a la frontera (50)</b>:</p>
+      <ul>
+        <li><b>49,99 €</b> → NO debe salir envío gratis</li>
+        <li><b>50,00 €</b> → SÍ debe salir (la frontera exacta, la que más falla)</li>
+        <li><b>50,01 €</b> → SÍ debe salir</li>
+      </ul>
+      <p><em>Es el clásico bug del <code>&gt;</code> vs <code>&gt;=</code>. Cuando pruebas «el límite y lo de justo al lado», estás haciendo análisis del valor frontera.</em></p>
+    </div>
     <p><span class="term">Prueba de tabla de decisión (decision table testing):</span> condiciones × acciones; cada columna es una regla. Con <b>n</b> condiciones booleanas hay <b>2ⁿ</b> combinaciones.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · tabla de decisión</p>
+      <p>El descuento depende de <b>dos condiciones</b>: ¿es cliente nuevo? ¿el pedido supera 100 €? Para no olvidarte ninguna combinación, montas una tabla (2 condiciones → 2² = <b>4 casos</b>):</p>
+      <div class="table-wrap" style="margin:8px 0"><table>
+        <tr><th>¿Cliente nuevo?</th><th>¿Pedido &gt; 100 €?</th><th>Descuento esperado</th></tr>
+        <tr><td>Sí</td><td>Sí</td><td>20%</td></tr>
+        <tr><td>Sí</td><td>No</td><td>10%</td></tr>
+        <tr><td>No</td><td>Sí</td><td>5%</td></tr>
+        <tr><td>No</td><td>No</td><td>0%</td></tr>
+      </table></div>
+      <p><em>Es lo que haces cuando dices «vale, ¿y si es nuevo PERO compra poco? ¿y si es antiguo y compra mucho?». La tabla te garantiza que no se te escapa ninguna regla de negocio.</em></p>
+    </div>
     <p><span class="term">Prueba de transición de estado (state transition testing):</span> estados, eventos, transiciones y acciones. Cobertura: todos los estados; todas las transiciones válidas (0-switch); todas las transiciones (válidas + inválidas).</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · transición de estado</p>
+      <p>Un pedido pasa por estados: <code>Carrito → Pagado → Enviado → Entregado</code>. Esta técnica prueba los <em>caminos</em>:</p>
+      <ul>
+        <li><b>Transición válida:</b> de «Pagado» a «Enviado» al preparar el paquete. ✔</li>
+        <li><b>Transición inválida (lo jugoso):</b> intentar pasar de «Entregado» de vuelta a «Carrito», o cancelar un pedido ya «Enviado». El sistema <em>no</em> debe permitirlo.</li>
+      </ul>
+      <p><em>Cuando pruebas «¿qué pasa si le doy a cancelar cuando ya está enviado?» estás cubriendo transiciones inválidas.</em></p>
+    </div>
     <h3>4.3 Caja blanca <span class="klev k2">K2</span></h3>
     <div class="table-wrap"><table>
       <tr><th></th><th>Sentencias</th><th>Ramas</th></tr>
@@ -408,10 +525,36 @@
       <tr><td>Fórmula</td><td>(ejecutadas / totales)×100</td><td>(ramas ejecutadas / totales)×100</td></tr>
     </table></div>
     <div class="callout warn"><p style="margin:0"><b>Clave:</b> 100% de ramas ⟹ 100% de sentencias, pero <u>no</u> al revés.</p></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · caja negra vs. caja blanca</p>
+      <ul>
+        <li><b>Caja negra:</b> pruebas el cupón <em>desde la pantalla</em>, sin mirar el código. Metes el cupón y miras si el precio baja. Es lo que hace un QA la mayor parte del tiempo.</li>
+        <li><b>Caja blanca:</b> abres el código de <code>calcularDescuento()</code> y te aseguras de que <em>cada rama</em> (el <code>if cliente_nuevo</code> y su <code>else</code>) se ejecuta al menos una vez en tus pruebas. La <b>cobertura de ramas</b> es la que te avisa de que hay un <code>else</code> que nunca has probado.</li>
+      </ul>
+      <p><em>Regla que cae en el examen: si cubres todas las ramas, cubres todas las sentencias; pero puedes ejecutar todas las líneas sin haber probado el «camino del else» — por eso ramas es más fuerte.</em></p>
+    </div>
     <h3>4.4 Basadas en la experiencia <span class="klev k2">K2</span></h3>
     <p><span class="term">Predicción de errores (error guessing)</span>, <span class="term">prueba exploratoria</span> (aprender+diseñar+ejecutar a la vez, con charters) y <span class="term">prueba basada en lista de comprobación</span>.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <ul>
+        <li><b>Predicción de errores:</b> por experiencia, sin que nadie te lo diga, vas directo a lo que sueles ver romperse: carrito vacío, doble clic en «Pagar», una comilla <code>'</code> en el buscador, subir una foto de 50 MB.</li>
+        <li><b>Prueba exploratoria:</b> te pones 30 minutos con una misión (un <em>charter</em>): «explorar el checkout con tarjetas rechazadas», y vas aprendiendo y probando a la vez, sin guion previo.</li>
+        <li><b>Lista de comprobación:</b> tu checklist de siempre — «textos sin faltas, responsive en móvil, enlaces no rotos, campos obligatorios marcados».</li>
+      </ul>
+    </div>
     <h3>4.5 Colaboración <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <p><b>INVEST</b> (Independent, Negotiable, Valuable, Estimable, Small, Testable) y las <b>3 C</b> (Card, Conversation, Confirmation). Los <span class="term">criterios de aceptación</span> (Given/When/Then o reglas) alimentan el <span class="term">DGPA — Desarrollo Guiado por Prueba de Aceptación</span> (ATDD).</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · criterios de aceptación</p>
+      <p>El Given/When/Then que seguramente ya escribes en las historias es esto:</p>
+      <ul style="list-style:none;padding-left:0">
+        <li><b>Dado</b> (Given) un carrito de 60 € y un cupón «VERANO10» válido,</li>
+        <li><b>Cuando</b> (When) aplico el cupón,</li>
+        <li><b>Entonces</b> (Then) el total baja a 54 € y se muestra «-10%».</li>
+      </ul>
+      <p><em>En <b>DGPA (ATDD)</b> acordáis estos criterios <b>antes</b> de programar, y de ahí salen tanto el desarrollo como tus pruebas. Las <b>3 C</b>: la tarjeta (Card) es el post-it de la historia, la conversación (Conversation) es el refinamiento donde lo aclaráis, y la confirmación (Confirmation) son justo estos criterios de aceptación.</em></p>
+    </div>
   </section>
 
   <section class="ch" id="c5">
@@ -419,27 +562,71 @@
     <h3>5.1 Planificación <span class="klev k1">K1</span> <span class="klev k2">K2</span> <span class="klev k3">K3</span></h3>
     <p>El <span class="term">plan de pruebas</span> define objetivos, alcance, recursos, calendario, enfoque y criterios. <b>Entrada</b> = Definition of Ready; <b>salida</b> = Definition of Done.</p>
     <p><span class="term">Estimación de tres puntos:</span> <b>E = (a + 4m + b) / 6</b>. Otras: ratios, extrapolación, wideband Delphi (planning poker).</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · estimación de tres puntos</p>
+      <p>Te preguntan cuánto tardarás en probar el nuevo checkout. En vez de soltar un número, das tres: <b>optimista (a)=2</b> días si todo va fino, <b>más probable (m)=4</b>, <b>pesimista (b)=12</b> si el entorno se cae. La fórmula pondera el realista ×4:</p>
+      <p>E = (2 + 4×4 + 12) / 6 = 30/6 = <b>5 días</b>. Más honesto que decir «4» a secas, porque incorpora el riesgo de que algo salga mal.</p>
+    </div>
     <p><span class="term">Priorización:</span> por riesgo, cobertura o requisitos. <span class="term">Pirámide de pruebas:</span> muchas unitarias en la base, pocas de UI (lentas) en la cima. <span class="term">Cuadrantes ágiles:</span> negocio↔tecnología × apoyo al equipo↔crítica al producto.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <ul>
+        <li><b>Criterio de entrada (Definition of Ready):</b> «no empiezo a testear hasta que el build está desplegado en <em>staging</em> y la historia tiene criterios de aceptación».</li>
+        <li><b>Criterio de salida (Definition of Done):</b> «no damos la historia por cerrada hasta que no hay bugs críticos abiertos y la regresión está en verde».</li>
+        <li><b>Pirámide de pruebas:</b> muchos tests unitarios (rápidos y baratos) en la base; unos pocos end-to-end de Cypress/Selenium en la cima (lentos y frágiles). Si tienes 500 tests de UI y 10 unitarios, tienes la pirámide <em>del revés</em> (el «cono de helado»).</li>
+      </ul>
+    </div>
     <h3>5.2 Gestión de riesgos <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <div class="callout"><p style="margin:0"><b>Riesgo = probabilidad × impacto.</b></p></div>
     <p><b>Riesgo de proyecto</b> (plazos, recursos, proveedores) vs <b>riesgo de producto</b> (calidad del entregable — aquí actúan las pruebas). Más riesgo → más minuciosidad y cobertura.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · producto vs proyecto</p>
+      <ul>
+        <li><b>Riesgo de producto</b> (lo que pruebas): «si el pago falla, perdemos ventas». Como el impacto es enorme, ahí <em>aprietas</em> con más casos y más profundidad.</li>
+        <li><b>Riesgo de proyecto</b> (gestión): «se va un dev del equipo» o «el proveedor de la pasarela retrasa la integración». No lo arreglas probando.</li>
+      </ul>
+      <p><em>Priorizar «pruebo primero el checkout y luego el footer» es exactamente aplicar riesgo = probabilidad × impacto.</em></p>
+    </div>
     <h3>5.3 Monitorización, control y finalización <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <p><b>Informe de progreso</b> (continuo) vs <b>informe de finalización</b> (resumen al cerrar). Métricas: progreso, calidad, defectos, cobertura, coste.</p>
     <h3>5.4 Gestión de la configuración <span class="klev k1">K1</span></h3>
     <p>Identifica, versiona y da <b>trazabilidad</b> al testware y a los objetos de prueba: pruebas reproducibles y auditables.</p>
     <h3>5.5 Gestión de defectos <span class="klev k1">K1</span> <span class="klev k3">K3</span></h3>
     <div class="callout warn"><p style="margin:0"><b>Severidad</b> = impacto técnico en el sistema. <b>Prioridad</b> = urgencia de corregir para el negocio. Son <u>independientes</u>.</p></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · severidad vs prioridad</p>
+      <ul>
+        <li><b>Severidad alta + prioridad alta:</b> el botón «Pagar» no funciona. Grave y urgente → se corrige ya.</li>
+        <li><b>Severidad baja + prioridad alta:</b> una errata en el logo de la home el día de un lanzamiento. Técnicamente es una tontería, pero da la cara a todo el mundo → urge.</li>
+        <li><b>Severidad alta + prioridad baja:</b> un crash total… en una función que no se lanza hasta dentro de 6 meses. Muy grave, pero no urge.</li>
+      </ul>
+      <p><b>Un buen informe de defecto</b> (tu bug en Jira) lleva: título claro, <em>pasos para reproducir</em>, resultado <em>esperado</em> vs <em>real</em>, entorno, captura/vídeo, severidad y prioridad. Si el dev puede reproducirlo sin escribirte, has hecho un buen informe.</p>
+    </div>
   </section>
 
   <section class="ch" id="c6">
     <div class="ch-head"><span class="cn">6</span><h2>Herramientas de prueba</h2><span class="wt">~2 preguntas</span></div>
     <h3>6.1 Soporte de herramientas <span class="klev k2">K2</span></h3>
     <p>Dan soporte a: gestión, pruebas estáticas, diseño e implementación, ejecución y cobertura, pruebas no funcionales, DevOps y colaboración.</p>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica · herramientas que ya conoces</p>
+      <ul>
+        <li><b>Gestión:</b> Jira, Xray, TestRail (gestionar casos y bugs).</li>
+        <li><b>Ejecución / automatización:</b> Selenium, Cypress, Playwright.</li>
+        <li><b>Análisis estático:</b> SonarQube, ESLint (revisan el código sin ejecutarlo).</li>
+        <li><b>No funcionales:</b> JMeter, k6 (rendimiento); OWASP ZAP (seguridad).</li>
+        <li><b>DevOps / CI-CD:</b> Jenkins, GitHub Actions (lanzan las pruebas en cada push).</li>
+      </ul>
+    </div>
     <h3>6.2 Beneficios y riesgos de la automatización <span class="klev k1">K1</span></h3>
     <div class="table-wrap"><table>
       <tr><th>Beneficios</th><th>Riesgos</th></tr>
       <tr><td>Menos trabajo repetitivo; consistencia; medidas objetivas; acceso a información.</td><td>Expectativas irreales; subestimar el <b>mantenimiento</b>; dependencia excesiva; problemas con el proveedor.</td></tr>
     </table></div>
+    <div class="practice">
+      <p class="pr-t">🔧 En la práctica</p>
+      <p>El riesgo estrella de la automatización que seguro has vivido: la <b>suite de Selenium <em>flaky</em></b> que falla un día sí y otro también por <em>timeouts</em>, que nadie mantiene y que al final todo el mundo ignora («bah, ese test siempre falla»). Eso es a la vez <b>subestimar el mantenimiento</b> y <b>dependencia excesiva</b> de la herramienta. Automatizar no es gratis: cada test hay que mantenerlo.</p>
+    </div>
   </section>
   </main>
 </div></div>

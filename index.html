@@ -216,7 +216,7 @@
     <div>
       <p class="eyebrow">Certified Tester · Foundation Level</p>
       <h1>ISTQB <span>CTFL v4.0</span><br>Guía de estudio y examen</h1>
-      <p class="lede">Apuntes de los 6 capítulos del syllabus v4.0.1, fichas de terminología y un banco de preguntas tipo examen con corrección al instante.</p>
+      <p class="lede">Apuntes de los 6 capítulos, fichas de terminología y un banco de preguntas tipo examen con corrección al instante. Terminología alineada con el syllabus oficial en español (SSTQB/ISTQB v4.0).</p>
     </div>
     <div class="facts" aria-label="Datos del examen">
       <div class="fact"><b>40</b><small>Preguntas</small></div>
@@ -248,7 +248,7 @@
   <main>
 
   <section class="ch" id="c1">
-    <div class="ch-head"><span class="cn">1</span><h2>Fundamentos de las pruebas</h2><span class="wt">~8 preguntas</span></div>
+    <div class="ch-head"><span class="cn">1</span><h2>Fundamentos del proceso de prueba</h2><span class="wt">~8 preguntas</span></div>
     <h3>1.1 ¿Qué son las pruebas? <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <p>Las <span class="term">pruebas (testing)</span> son un conjunto de actividades para descubrir defectos y evaluar la calidad de los artefactos de software. No consisten solo en ejecutar: la ejecución (<span class="term">pruebas dinámicas</span>) es una parte, pero también hay <span class="term">pruebas estáticas</span> (revisar sin ejecutar) y tareas de planificación, análisis, diseño e informe.</p>
     <h4>Objetivos típicos</h4>
@@ -275,7 +275,7 @@
       <p style="margin:8px 0 0">Un error puede introducir un defecto y un defecto puede provocar un fallo — pero <b>no siempre</b>. Los fallos también pueden deberse a condiciones del entorno. La <b>causa raíz</b> es el origen fundamental del error.</p>
     </div>
     <div class="table-wrap"><table>
-      <tr><th>QA — Aseguramiento de calidad</th><th>QC — Control de calidad</th></tr>
+      <tr><th>AC — Aseguramiento de la Calidad (QA)</th><th>Control de la Calidad (QC)</th></tr>
       <tr><td>Orientado al <b>proceso</b>. Preventivo.</td><td>Orientado al <b>producto</b>. Correctivo. Incluye las <b>pruebas</b>.</td></tr>
     </table></div>
     <p><b>Las pruebas forman parte del control de calidad (QC)</b>, no del QA.</p>
@@ -284,13 +284,13 @@
     <div class="callout">
       <p class="co-t">Los 7 principios</p>
       <ol>
-        <li><b>Las pruebas muestran la presencia de defectos, no su ausencia.</b></li>
-        <li><b>Las pruebas exhaustivas son imposibles.</b> Hay que priorizar.</li>
-        <li><b>Pruebas tempranas ahorran tiempo y dinero</b> (shift-left).</li>
-        <li><b>Los defectos se agrupan (clustering)</b> — principio de Pareto.</li>
-        <li><b>Paradoja del pesticida</b> — repetir pruebas deja de hallar defectos nuevos.</li>
-        <li><b>Las pruebas dependen del contexto.</b></li>
-        <li><b>Falacia de ausencia de errores</b> — un sistema sin defectos puede seguir siendo inútil.</li>
+        <li><b>La prueba muestra la presencia de defectos, no su ausencia.</b></li>
+        <li><b>La prueba exhaustiva es imposible.</b> Hay que priorizar.</li>
+        <li><b>La prueba temprana ahorra tiempo y dinero</b> (desplazamiento a la izquierda / shift-left).</li>
+        <li><b>Los defectos se agrupan</b> — principio de Pareto (clustering).</li>
+        <li><b>Las pruebas se desgastan</b> — repetir las mismas pruebas deja de hallar defectos nuevos (pesticide paradox).</li>
+        <li><b>La prueba depende del contexto.</b></li>
+        <li><b>Falacia de la ausencia de defectos</b> — un sistema sin apenas defectos puede seguir siendo inútil.</li>
       </ol>
     </div>
 
@@ -315,7 +315,7 @@
   </section>
 
   <section class="ch" id="c2">
-    <div class="ch-head"><span class="cn">2</span><h2>Pruebas a lo largo del ciclo de vida</h2><span class="wt">~5 preguntas</span></div>
+    <div class="ch-head"><span class="cn">2</span><h2>Prueba a lo largo del ciclo de vida de desarrollo</h2><span class="wt">~5 preguntas</span></div>
     <h3>2.1 Pruebas en el contexto del SDLC <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <ul>
       <li><span class="term">Secuenciales:</span> waterfall, <b>modelo en V</b>.</li>
@@ -359,7 +359,7 @@
   </section>
 
   <section class="ch" id="c3">
-    <div class="ch-head"><span class="cn">3</span><h2>Pruebas estáticas</h2><span class="wt">~5 preguntas</span></div>
+    <div class="ch-head"><span class="cn">3</span><h2>Prueba estática</h2><span class="wt">~5 preguntas</span></div>
     <h3>3.1 Fundamentos <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
     <p>Se examinan productos de trabajo <b>sin ejecutar</b> el código (revisiones o análisis estático). Aplica a casi cualquier artefacto legible.</p>
     <div class="callout"><p class="co-t">Valor</p>
@@ -387,20 +387,20 @@
     <div class="table-wrap"><table>
       <tr><th>Tipo (de menos a más formal)</th><th>Rasgo</th></tr>
       <tr><td>Informal</td><td>Sin proceso, resultados no documentados.</td></tr>
-      <tr><td>Walkthrough</td><td>Dirigida por el <b>autor</b>.</td></tr>
+      <tr><td>Revisión guiada (walkthrough)</td><td>Dirigida por el <b>autor</b>.</td></tr>
       <tr><td>Revisión técnica</td><td>Pares técnicos; busca consenso.</td></tr>
       <tr><td>Inspección</td><td>La más <b>formal</b>; proceso, roles y métricas.</td></tr>
     </table></div>
   </section>
 
   <section class="ch" id="c4">
-    <div class="ch-head"><span class="cn">4</span><h2>Análisis y diseño de pruebas</h2><span class="wt">★ ~11 preguntas</span></div>
-    <p style="color:var(--muted)">El capítulo con <b>más peso</b> y el único con objetivos <span class="klev k3">K3</span> (aplicar): calcularás particiones, valores límite, tablas de decisión, transiciones y cobertura.</p>
+    <div class="ch-head"><span class="cn">4</span><h2>Análisis y diseño de la prueba</h2><span class="wt">★ ~11 preguntas</span></div>
+    <p style="color:var(--muted)">El capítulo con <b>más peso</b> y el único con objetivos <span class="klev k3">K3</span> (aplicar): calcularás particiones, análisis del valor frontera, tablas de decisión, transiciones y cobertura.</p>
     <h3>4.2 Caja negra <span class="klev k3">K3</span></h3>
-    <p><span class="term">Particiones de equivalencia (EP):</span> divide el dominio en particiones donde todos los valores se tratan igual; basta un valor por partición. Hay válidas e inválidas.</p>
-    <p><span class="term">Valores límite (BVA):</span> los defectos se agolpan en los bordes. <b>2 valores:</b> límite + vecino. <b>3 valores:</b> límite + ambos vecinos. Solo datos ordenables.</p>
-    <p><span class="term">Tablas de decisión:</span> condiciones × acciones; cada columna es una regla. Con <b>n</b> condiciones booleanas hay <b>2ⁿ</b> combinaciones.</p>
-    <p><span class="term">Transición de estados:</span> estados, eventos, transiciones y acciones. Cobertura: todos los estados; todas las transiciones válidas (0-switch); todas las transiciones (válidas + inválidas).</p>
+    <p><span class="term">Partición de equivalencia (equivalence partitioning):</span> divide el dominio en particiones donde todos los valores se tratan igual; basta un valor por partición. Hay válidas e inválidas.</p>
+    <p><span class="term">Análisis del valor frontera (boundary value analysis):</span> los defectos se agolpan en los bordes de una partición ordenada. <b>2 valores:</b> frontera + vecino. <b>3 valores:</b> frontera + ambos vecinos. Solo datos ordenables. <span style="color:var(--muted)">(También conocido como «análisis de valores límite».)</span></p>
+    <p><span class="term">Prueba de tabla de decisión (decision table testing):</span> condiciones × acciones; cada columna es una regla. Con <b>n</b> condiciones booleanas hay <b>2ⁿ</b> combinaciones.</p>
+    <p><span class="term">Prueba de transición de estado (state transition testing):</span> estados, eventos, transiciones y acciones. Cobertura: todos los estados; todas las transiciones válidas (0-switch); todas las transiciones (válidas + inválidas).</p>
     <h3>4.3 Caja blanca <span class="klev k2">K2</span></h3>
     <div class="table-wrap"><table>
       <tr><th></th><th>Sentencias</th><th>Ramas</th></tr>
@@ -408,10 +408,10 @@
       <tr><td>Fórmula</td><td>(ejecutadas / totales)×100</td><td>(ramas ejecutadas / totales)×100</td></tr>
     </table></div>
     <div class="callout warn"><p style="margin:0"><b>Clave:</b> 100% de ramas ⟹ 100% de sentencias, pero <u>no</u> al revés.</p></div>
-    <h3>4.4 Basadas en experiencia <span class="klev k2">K2</span></h3>
-    <p><span class="term">Adivinación de errores</span>, <span class="term">pruebas exploratorias</span> (aprender+diseñar+ejecutar a la vez, con charters) y <span class="term">basadas en listas de comprobación</span>.</p>
+    <h3>4.4 Basadas en la experiencia <span class="klev k2">K2</span></h3>
+    <p><span class="term">Predicción de errores (error guessing)</span>, <span class="term">prueba exploratoria</span> (aprender+diseñar+ejecutar a la vez, con charters) y <span class="term">prueba basada en lista de comprobación</span>.</p>
     <h3>4.5 Colaboración <span class="klev k1">K1</span> <span class="klev k2">K2</span></h3>
-    <p><b>INVEST</b> (Independent, Negotiable, Valuable, Estimable, Small, Testable) y las <b>3 C</b> (Card, Conversation, Confirmation). Los <span class="term">criterios de aceptación</span> (Given/When/Then o reglas) alimentan el <span class="term">ATDD</span>.</p>
+    <p><b>INVEST</b> (Independent, Negotiable, Valuable, Estimable, Small, Testable) y las <b>3 C</b> (Card, Conversation, Confirmation). Los <span class="term">criterios de aceptación</span> (Given/When/Then o reglas) alimentan el <span class="term">DGPA — Desarrollo Guiado por Prueba de Aceptación</span> (ATDD).</p>
   </section>
 
   <section class="ch" id="c5">
@@ -550,7 +550,7 @@
 </div>
 
 <footer class="wrap">
-  Guía de estudio no oficial basada en el syllabus público ISTQB® CTFL v4.0.1. ISTQB® es marca registrada del International Software Testing Qualifications Board. Material de apoyo para autoestudio.
+  Guía de estudio no oficial basada en el syllabus público ISTQB® CTFL v4.0. Terminología contrastada con el programa de estudio oficial en español (SSTQB) y el glosario ISTQB. Apuntes redactados de forma original (no es una copia ni traducción literal del documento oficial). ISTQB® es marca registrada del International Software Testing Qualifications Board. Material de apoyo para autoestudio.
 </footer>
 <button class="theme-toggle" id="themeToggle">◐ Tema</button>
 
@@ -563,8 +563,8 @@ const CARDS = [
  {ch:1,t:"Causa raíz (root cause)",d:"Origen fundamental de un problema; eliminarla evita que se repita el error."},
  {ch:1,t:"Verificación",d:"Confirmar que se cumplen los requisitos especificados. «¿Hemos construido bien el producto?»"},
  {ch:1,t:"Validación",d:"Confirmar que el producto satisface las necesidades reales del usuario. «¿Hemos construido el producto correcto?»"},
- {ch:1,t:"QA — Aseguramiento de calidad",d:"Enfoque orientado al proceso y preventivo: da confianza en que se seguirán los procesos adecuados."},
- {ch:1,t:"QC — Control de calidad",d:"Enfoque orientado al producto y correctivo. Incluye las actividades de prueba."},
+ {ch:1,t:"Aseguramiento de la Calidad (AC / QA)",d:"Enfoque orientado al proceso y preventivo: da confianza en que se seguirán los procesos adecuados. Término oficial ISTQB-ES: «aseguramiento de la calidad»."},
+ {ch:1,t:"Control de la Calidad (QC)",d:"Enfoque orientado al producto y correctivo. Incluye las actividades de prueba."},
  {ch:1,t:"Testware",d:"Conjunto de productos de trabajo de las pruebas: plan, condiciones, casos, datos, procedimientos, scripts, informes, etc."},
  {ch:1,t:"Base de prueba (test basis)",d:"Cuerpo de conocimiento del que se derivan las pruebas: requisitos, historias, diseños, código, riesgos…"},
  {ch:1,t:"Condición de prueba",d:"Aspecto verificable del objeto de prueba identificado en el análisis. Responde a «qué probar»."},
@@ -584,20 +584,20 @@ const CARDS = [
  {ch:2,t:"Prueba de regresión",d:"Comprueba que un cambio no ha introducido defectos en partes que antes funcionaban."},
  {ch:2,t:"Análisis de impacto",d:"Evaluación de los cambios para determinar sus consecuencias y el alcance de la regresión necesaria."},
  {ch:2,t:"Shift-left",d:"Adelantar las pruebas en el ciclo de vida para detectar defectos cuanto antes."},
- {ch:2,t:"TDD / ATDD / BDD",d:"Enfoques «test-first»: TDD desde pruebas de componente; ATDD desde criterios de aceptación; BDD desde comportamiento en lenguaje natural."},
+ {ch:2,t:"TDD / ATDD / BDD",d:"Enfoques «test-first»: TDD desde pruebas de componente; ATDD (en ISTQB-ES, DGPA: Desarrollo Guiado por Prueba de Aceptación) desde criterios de aceptación; BDD desde comportamiento en lenguaje natural."},
  {ch:3,t:"Prueba estática",d:"Examen de un producto de trabajo sin ejecutar el código: revisiones manuales o análisis estático con herramientas."},
  {ch:3,t:"Prueba dinámica",d:"Prueba que requiere ejecutar el software; provoca fallos a partir de los cuales se localizan los defectos."},
  {ch:3,t:"Revisión informal",d:"Tipo de revisión sin proceso formal; los resultados no se documentan. La menos formal."},
- {ch:3,t:"Walkthrough (recorrido)",d:"Revisión dirigida habitualmente por el autor para evaluar, resolver dudas y formar."},
+ {ch:3,t:"Revisión guiada (walkthrough)",d:"Tipo de revisión dirigida habitualmente por el autor para evaluar, resolver dudas y formar. Término oficial ISTQB-ES: «revisión guiada»."},
  {ch:3,t:"Inspección",d:"Revisión más formal: proceso definido, roles, criterios y métricas. Busca el máximo de defectos."},
  {ch:3,t:"Moderador / facilitador",d:"Rol de la revisión que garantiza que la reunión se desarrolla con eficacia y de forma constructiva."},
  {ch:4,t:"Partición de equivalencia",d:"Técnica de caja negra que divide el dominio en grupos que se procesan igual; basta un valor por partición."},
- {ch:4,t:"Análisis de valores límite",d:"Técnica de caja negra sobre los bordes de particiones ordenadas. 2 valores: límite y vecino; 3 valores: límite y ambos vecinos."},
+ {ch:4,t:"Análisis del valor frontera",d:"Término oficial ISTQB-ES para «boundary value analysis» (también «valores límite»). Técnica de caja negra sobre los bordes de particiones ordenadas. 2 valores: frontera y vecino; 3 valores: frontera y ambos vecinos."},
  {ch:4,t:"Tabla de decisión",d:"Técnica de caja negra que combina condiciones y acciones; cada columna es una regla de negocio."},
- {ch:4,t:"Transición de estados",d:"Técnica de caja negra que modela estados, eventos, transiciones y acciones."},
+ {ch:4,t:"Prueba de transición de estado",d:"Técnica de caja negra que modela estados, eventos, transiciones y acciones."},
  {ch:4,t:"Cobertura de sentencias",d:"Porcentaje de sentencias ejecutables ejercitadas por las pruebas."},
  {ch:4,t:"Cobertura de ramas",d:"Porcentaje de ramas (resultados de decisión) ejercitadas. El 100% implica 100% de sentencias, pero no al revés."},
- {ch:4,t:"Adivinación de errores",d:"Técnica basada en experiencia: anticipar defectos y fallos a partir del conocimiento de errores frecuentes."},
+ {ch:4,t:"Predicción de errores",d:"Término oficial ISTQB-ES para «error guessing». Técnica basada en la experiencia: anticipar defectos y fallos a partir del conocimiento de errores frecuentes."},
  {ch:4,t:"Pruebas exploratorias",d:"Aprender, diseñar y ejecutar pruebas a la vez, en sesiones acotadas guiadas por test charters."},
  {ch:4,t:"INVEST",d:"Cualidades de una buena historia de usuario: Independent, Negotiable, Valuable, Estimable, Small, Testable."},
  {ch:4,t:"Las 3 C",d:"Componentes de una historia de usuario: Card (tarjeta), Conversation (conversación), Confirmation (confirmación)."},
@@ -621,9 +621,9 @@ const BANK = [
  {ch:1,k:"K2",q:"¿Qué afirmación describe mejor la relación entre pruebas y depuración?",o:["Son sinónimos.","Las pruebas dinámicas provocan fallos; la depuración reproduce, diagnostica y corrige el defecto.","La depuración la hacen los testers y las pruebas los desarrolladores.","La depuración se hace antes de escribir las pruebas."],a:1,e:"Las pruebas dinámicas provocan fallos; la depuración es la actividad de desarrollo posterior: reproducir, diagnosticar y corregir. Una prueba de confirmación valida la corrección."},
  {ch:1,k:"K1",q:"Un desarrollador teclea mal una fórmula y el usuario ve un importe erróneo en pantalla. El importe erróneo es un…",o:["Error (mistake).","Defecto (fault).","Fallo (failure).","Causa raíz."],a:2,e:"El error es la equivocación humana; el defecto, la fórmula incorrecta en el código; el fallo, el comportamiento incorrecto observable: el importe erróneo."},
  {ch:1,k:"K1",q:"¿Qué es la causa raíz de un defecto?",o:["El fallo que produce el defecto.","La fuente fundamental que originó el error.","El caso de prueba que lo detecta.","El impacto del defecto en el sistema."],a:1,e:"La causa raíz es el origen fundamental del problema; actuar sobre ella evita que el error se repita."},
- {ch:1,k:"K2",q:"«Un sistema con pocos defectos puede fracasar igualmente si es inusable o no cubre las necesidades del usuario». ¿A qué principio corresponde?",o:["Las pruebas exhaustivas son imposibles.","Los defectos se agrupan.","La falacia de ausencia de errores.","La paradoja del pesticida."],a:2,e:"Es la falacia de ausencia de errores: la baja densidad de defectos no garantiza el éxito del producto."},
- {ch:1,k:"K2",q:"El principio «los defectos se agrupan» se apoya en…",o:["La paradoja del pesticida.","El principio de Pareto.","La estimación de tres puntos.","El modelo en V."],a:1,e:"El clustering de defectos se relaciona con Pareto: un número pequeño de módulos suele concentrar la mayoría de los defectos."},
- {ch:1,k:"K2",q:"¿Qué recomienda hacer la paradoja del pesticida?",o:["Ejecutar siempre los mismos casos para tener consistencia.","Revisar y actualizar las pruebas, y crear otras nuevas.","Automatizar todas las pruebas manuales.","Eliminar las pruebas de regresión."],a:1,e:"Repetir siempre las mismas pruebas deja de encontrar defectos nuevos; hay que revisarlas y añadir pruebas diferentes."},
+ {ch:1,k:"K2",q:"«Un sistema con pocos defectos puede fracasar igualmente si es inusable o no cubre las necesidades del usuario». ¿A qué principio corresponde?",o:["La prueba exhaustiva es imposible.","Los defectos se agrupan.","Falacia de la ausencia de defectos.","Las pruebas se desgastan."],a:2,e:"Es la «falacia de la ausencia de defectos» (nombre oficial ISTQB-ES): una baja densidad de defectos no garantiza el éxito del producto."},
+ {ch:1,k:"K2",q:"El principio «los defectos se agrupan» se apoya en…",o:["El desgaste de las pruebas.","El principio de Pareto.","La estimación de tres puntos.","El modelo en V."],a:1,e:"La agrupación de defectos se relaciona con Pareto: un número pequeño de módulos suele concentrar la mayoría de los defectos."},
+ {ch:1,k:"K2",q:"El principio «las pruebas se desgastan» (pesticide paradox) recomienda…",o:["Ejecutar siempre los mismos casos para tener consistencia.","Revisar y actualizar las pruebas, y crear otras nuevas.","Automatizar todas las pruebas manuales.","Eliminar las pruebas de regresión."],a:1,e:"Repetir siempre las mismas pruebas deja de encontrar defectos nuevos; hay que revisarlas y añadir pruebas diferentes. En ISTQB-ES el principio se llama «las pruebas se desgastan»."},
  {ch:1,k:"K2",q:"¿Cuál de estas afirmaciones sobre QA y QC es correcta?",o:["Las pruebas forman parte del QA.","El QC está orientado al proceso y es preventivo.","El QC incluye las actividades de prueba y es correctivo.","QA y QC son lo mismo."],a:2,e:"El QA es preventivo y orientado al proceso; el QC es correctivo, orientado al producto e incluye las pruebas."},
  {ch:1,k:"K2",q:"Ordena las actividades del proceso de prueba.",o:["Diseño → análisis → ejecución → implementación.","Análisis → diseño → implementación → ejecución.","Implementación → diseño → análisis → ejecución.","Ejecución → análisis → diseño → implementación."],a:1,e:"El orden es planificación, monitorización y control, análisis, diseño, implementación, ejecución y finalización."},
  {ch:1,k:"K2",q:"El análisis de pruebas responde a «qué probar» y el diseño a «cómo probar». ¿Qué produce el análisis?",o:["Casos de prueba.","Condiciones de prueba.","Datos de prueba.","Informes de defectos."],a:1,e:"El análisis identifica condiciones de prueba («qué probar»); el diseño las transforma en casos de prueba («cómo probar»)."},
@@ -641,21 +641,21 @@ const BANK = [
  {ch:2,k:"K2",q:"¿Cuál es un riesgo del uso de CI/CD y DevOps en las pruebas?",o:["Feedback demasiado lento.","Complejidad del pipeline y coste de establecerlo y mantenerlo.","Imposibilidad de automatizar.","Menor frecuencia de integración."],a:1,e:"DevOps aporta feedback rápido, pero exige establecer y mantener un pipeline complejo y disciplina del equipo."},
  {ch:2,k:"K1",q:"¿En qué nivel se prueban las interacciones del sistema con servicios externos de terceros?",o:["Componente.","Integración de componentes.","Integración de sistemas.","Aceptación."],a:2,e:"La integración de sistemas prueba la interacción del sistema con otros sistemas o servicios externos."},
  {ch:3,k:"K2",q:"¿Por qué las pruebas estáticas encuentran defectos que las dinámicas no ven fácilmente?",o:["Porque ejecutan el código más veces.","Porque examinan directamente el producto y hallan requisitos ambiguos o código inalcanzable.","Porque solo se aplican al código fuente.","Porque miden la cobertura de ramas."],a:1,e:"Al examinar el artefacto sin ejecutarlo, la estática localiza directamente ambigüedades, contradicciones, desviaciones de estándares o código inalcanzable."},
- {ch:3,k:"K1",q:"Ordena de MENOS a MÁS formal los tipos de revisión.",o:["Inspección → técnica → walkthrough → informal.","Informal → walkthrough → técnica → inspección.","Walkthrough → informal → inspección → técnica.","Técnica → inspección → informal → walkthrough."],a:1,e:"De menor a mayor formalidad: informal, walkthrough, revisión técnica e inspección (la más formal)."},
- {ch:3,k:"K1",q:"¿Quién dirige habitualmente un walkthrough?",o:["El moderador.","El autor del producto de trabajo.","El gerente.","Un auditor externo."],a:1,e:"El walkthrough suele estar dirigido por el propio autor, que guía a los participantes por el documento."},
+ {ch:3,k:"K1",q:"Ordena de MENOS a MÁS formal los tipos de revisión.",o:["Inspección → técnica → revisión guiada → informal.","Informal → revisión guiada → técnica → inspección.","Revisión guiada → informal → inspección → técnica.","Técnica → inspección → informal → revisión guiada."],a:1,e:"De menor a mayor formalidad: informal, revisión guiada (walkthrough), revisión técnica e inspección (la más formal)."},
+ {ch:3,k:"K1",q:"¿Quién dirige habitualmente una revisión guiada (walkthrough)?",o:["El moderador.","El autor del producto de trabajo.","El gerente.","Un auditor externo."],a:1,e:"La revisión guiada (walkthrough) suele estar dirigida por el propio autor, que guía a los participantes por el documento."},
  {ch:3,k:"K2",q:"¿Cuál es la primera actividad del proceso de revisión?",o:["Revisión individual.","Planificación.","Corrección e informe.","Comunicación y análisis."],a:1,e:"Orden: planificación → inicio → revisión individual → comunicación y análisis → corrección e informe."},
  {ch:3,k:"K1",q:"¿Cuál de estos productos de trabajo PUEDE someterse a pruebas estáticas?",o:["Solo el código fuente.","Solo los casos de prueba.","Casi cualquier producto legible: requisitos, contratos, código, modelos…","Solo productos ejecutables."],a:2,e:"La estática aplica a casi cualquier artefacto legible y comprensible, no solo al código."},
  {ch:3,k:"K2",q:"¿Cuál es un factor de éxito de las revisiones relacionado con las personas?",o:["Fijar objetivos claros de la revisión.","Revisar en trozos pequeños.","Centrar las observaciones en el producto y no en la persona.","Contar con el apoyo de la dirección."],a:2,e:"Enfocar la crítica en el producto (no en el autor) y cuidar los aspectos psicológicos son factores de éxito ligados a las personas."},
  {ch:3,k:"K1",q:"¿Cuál es el rol responsable de tomar notas de las anomalías durante una revisión?",o:["Moderador.","Escriba (scribe).","Autor.","Gerente."],a:1,e:"El escriba o secretario registra las anomalías y decisiones durante la reunión de revisión."},
- {ch:4,k:"K3",q:"Un campo acepta enteros de 1 a 100. Con BVA de 2 valores, ¿qué conjunto es correcto?",o:["1, 50, 100.","0, 1, 100, 101.","1, 100.","0, 1, 2, 99, 100, 101."],a:1,e:"El BVA de 2 valores usa cada límite y su vecino: 0 y 1 (inferior), 100 y 101 (superior)."},
- {ch:4,k:"K3",q:"Mismo campo de 1 a 100. Con BVA de 3 valores en el límite inferior, ¿qué valores se prueban?",o:["1, 2, 3.","0, 1, 2.","-1, 0, 1.","0, 1, 100."],a:1,e:"El BVA de 3 valores prueba el límite y ambos vecinos: en el inferior (1) son 0, 1 y 2."},
+ {ch:4,k:"K3",q:"Un campo acepta enteros de 1 a 100. Con análisis del valor frontera de 2 valores, ¿qué conjunto es correcto?",o:["1, 50, 100.","0, 1, 100, 101.","1, 100.","0, 1, 2, 99, 100, 101."],a:1,e:"El análisis del valor frontera de 2 valores usa cada frontera y su vecino: 0 y 1 (inferior), 100 y 101 (superior)."},
+ {ch:4,k:"K3",q:"Mismo campo de 1 a 100. Con análisis del valor frontera de 3 valores en la frontera inferior, ¿qué valores se prueban?",o:["1, 2, 3.","0, 1, 2.","-1, 0, 1.","0, 1, 100."],a:1,e:"El de 3 valores prueba la frontera y ambos vecinos: en la inferior (1) son 0, 1 y 2."},
  {ch:4,k:"K3",q:"Un descuento aplica a compras de 500€ a 1000€. Con particiones de equivalencia, ¿cuántas particiones (válidas+inválidas) hay sobre el importe?",o:["1","2","3","4"],a:2,e:"Tres particiones: menor que 500 (inválida), 500–1000 (válida) y mayor que 1000 (inválida)."},
  {ch:4,k:"K2",q:"Sobre la cobertura de caja blanca, ¿qué afirmación es CORRECTA?",o:["100% de sentencias implica 100% de ramas.","100% de ramas implica 100% de sentencias.","Ambas son siempre equivalentes.","La cobertura de sentencias es más fuerte."],a:1,e:"La de ramas es más fuerte: el 100% de ramas garantiza el 100% de sentencias, pero no al revés."},
  {ch:4,k:"K3",q:"Una tabla de decisión con 4 condiciones booleanas independientes tiene, completa, ¿cuántas columnas?",o:["4","8","16","24"],a:2,e:"Con n condiciones booleanas hay 2ⁿ combinaciones. Para 4: 2⁴ = 16."},
  {ch:4,k:"K3",q:"Un método tiene 10 sentencias ejecutables; una batería de pruebas ejercita 7. ¿Cuál es la cobertura de sentencias?",o:["43%","70%","77%","100%"],a:1,e:"Cobertura de sentencias = (7/10)×100 = 70%."},
  {ch:4,k:"K2",q:"¿Qué nivel de cobertura de transición de estados exige recorrer transiciones válidas E inválidas?",o:["Cobertura de todos los estados.","Todas las transiciones válidas (0-switch).","Todas las transiciones (válidas e inválidas).","Cobertura de sentencias."],a:2,e:"La cobertura de todas las transiciones incluye las válidas y las inválidas, siendo más exigente que el 0-switch."},
- {ch:4,k:"K2",q:"¿Qué técnica encaja mejor cuando la especificación es pobre y hay poco tiempo, aprovechando la experiencia del tester?",o:["Cobertura de ramas.","Pruebas exploratorias.","Tabla de decisión.","Valores límite."],a:1,e:"Las pruebas exploratorias combinan aprender, diseñar y ejecutar a la vez, guiadas por charters; ideales con poca documentación."},
- {ch:4,k:"K2",q:"La adivinación de errores es una técnica basada en…",o:["La estructura del código.","La especificación formal.","La experiencia y el conocimiento de fallos frecuentes.","La cobertura de decisiones."],a:2,e:"Es una técnica basada en la experiencia: el tester anticipa dónde suelen aparecer defectos y fallos."},
+ {ch:4,k:"K2",q:"¿Qué técnica encaja mejor cuando la especificación es pobre y hay poco tiempo, aprovechando la experiencia del tester?",o:["Cobertura de ramas.","Prueba exploratoria.","Prueba de tabla de decisión.","Análisis del valor frontera."],a:1,e:"La prueba exploratoria combina aprender, diseñar y ejecutar a la vez, guiada por charters; ideal con poca documentación."},
+ {ch:4,k:"K2",q:"La predicción de errores (error guessing) es una técnica basada en…",o:["La estructura del código.","La especificación formal.","La experiencia y el conocimiento de fallos frecuentes.","La cobertura de decisiones."],a:2,e:"Es una técnica basada en la experiencia: el tester anticipa dónde suelen aparecer defectos y fallos. Término oficial ISTQB-ES: «predicción de errores»."},
  {ch:4,k:"K1",q:"En las historias de usuario, las «3 C» son…",o:["Card, Conversation, Confirmation.","Code, Compile, Commit.","Create, Check, Close.","Condition, Cause, Consequence."],a:0,e:"Las 3 C son Card (tarjeta), Conversation (conversación) y Confirmation (confirmación). INVEST describe las cualidades de la historia."},
  {ch:4,k:"K1",q:"¿Qué significa la «T» de INVEST?",o:["Traceable.","Testable.","Technical.","Timed."],a:1,e:"INVEST: Independent, Negotiable, Valuable, Estimable, Small y Testable (comprobable)."},
  {ch:4,k:"K2",q:"El formato «Given / When / Then» para criterios de aceptación es un ejemplo de…",o:["Formato orientado a reglas.","Formato orientado a escenarios.","Tabla de decisión.","Diagrama de estados."],a:1,e:"Given/When/Then es un formato orientado a escenarios; el otro formato habitual es el orientado a reglas (lista de condiciones)."},
@@ -670,7 +670,7 @@ const BANK = [
  {ch:5,k:"K2",q:"¿Cuál es el propósito de un informe de finalización de pruebas?",o:["Comunicar el estado en tiempo real durante la ejecución.","Resumir lo realizado frente a lo planificado al terminar una fase o proyecto.","Registrar cada defecto individual.","Sustituir al plan de pruebas."],a:1,e:"El informe de finalización resume, al cerrar la actividad, qué se logró respecto de lo planificado; el de progreso comunica el estado de forma continua."},
  {ch:5,k:"K1",q:"Los criterios de entrada (entry criteria) también se conocen en ágil como…",o:["Definition of Done.","Definition of Ready.","Test charter.","Retrospectiva."],a:1,e:"Los criterios de entrada equivalen a la Definition of Ready; los de salida, a la Definition of Done."},
  {ch:5,k:"K2",q:"¿Cuál de estos es un objetivo del análisis de riesgo de producto?",o:["Corregir los defectos encontrados.","Determinar el alcance y la prioridad de las pruebas.","Sustituir al plan de pruebas.","Eliminar la necesidad de pruebas de regresión."],a:1,e:"El análisis de riesgo de producto crea conciencia del riesgo y ayuda a fijar el alcance, la extensión y la prioridad de las pruebas."},
- {ch:5,k:"K1",q:"¿Qué NO es una técnica de estimación reconocida en el syllabus?",o:["Estimación basada en ratios.","Wideband Delphi (planning poker).","Estimación de tres puntos.","Análisis de valores límite."],a:3,e:"El análisis de valores límite es una técnica de diseño de pruebas, no de estimación. Las otras tres sí lo son."},
+ {ch:5,k:"K1",q:"¿Qué NO es una técnica de estimación reconocida en el syllabus?",o:["Estimación basada en ratios.","Wideband Delphi (planning poker).","Estimación de tres puntos.","Análisis del valor frontera."],a:3,e:"El análisis del valor frontera es una técnica de diseño de pruebas, no de estimación. Las otras tres sí lo son."},
  {ch:5,k:"K1",q:"¿Qué proporciona principalmente la gestión de la configuración a las pruebas?",o:["Automatización de la ejecución.","Trazabilidad e identificación versionada del testware y los objetos de prueba.","Estimación del esfuerzo.","Priorización de casos por riesgo."],a:1,e:"La gestión de la configuración identifica, controla y versiona el testware y los objetos de prueba, garantizando pruebas reproducibles y auditables."},
  {ch:5,k:"K2",q:"¿Qué eje NO forma parte de los cuadrantes de prueba ágiles?",o:["Orientadas a negocio ↔ a tecnología.","Apoyo al equipo ↔ crítica al producto.","Manuales ↔ automatizadas.","(Ambos ejes anteriores son los correctos)."],a:2,e:"Los cuadrantes ágiles se definen por negocio↔tecnología y apoyo al equipo↔crítica al producto; el eje manual/automatizado no es uno de ellos."},
  {ch:5,k:"K1",q:"En un informe de defecto, ¿qué campo mide el impacto técnico del defecto en el sistema?",o:["Prioridad.","Severidad.","Estado.","Identificador."],a:1,e:"La severidad mide el impacto técnico; la prioridad mide la urgencia de corregirlo desde el negocio."},
